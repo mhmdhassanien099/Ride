@@ -189,7 +189,7 @@ function checkReminderTime() {
     const minutes = now.getMinutes();
 
     // 9:00 AM reminder
-    if (hours === 21 && minutes === 5) {
+    if (hours === 21 && minutes === 8) {
         sendNotification("Time to log your Home → Work ride!");
     }
 
@@ -209,3 +209,4 @@ setInterval(checkReminderTime, 60000);
 </body>
 
 </html>
+
