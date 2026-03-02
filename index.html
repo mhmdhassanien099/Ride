@@ -180,7 +180,32 @@ function resetData() {
 }
 
 displayRides();
+
+
+    // 🔔 Check time every minute
+function checkReminderTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    // 9:00 AM reminder
+    if (hours === 21 && minutes === 5) {
+        sendNotification("Time to log your Home → Work ride!");
+    }
+
+    // 6:00 PM reminder (optional)
+    if (hours === 18 && minutes === 0) {
+        sendNotification("Time to log your Work → Home ride!");
+    }
+}
+
+// Ask permission when page loads
+requestNotificationPermission();
+
+// Check every minute
+setInterval(checkReminderTime, 60000);
 </script>
 
 </body>
+
 </html>
